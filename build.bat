@@ -1,9 +1,17 @@
-::Build the solution
+::Build the solutions
 g++ main.cpp -o main.exe
+g++ tests.cpp -o tests.exe
 
-::Run tests
-set /A res = start ./main.exe t
-if(res != 0)
+
+::Tests
+tests.exe
+
+PAUSE
+
+IF NOT "%errorlevel%" == "0"
 {
-	echo "oh no!"	
+::	PAUSE
+::	abort build, the tests failed
 }
+
+PAUSE

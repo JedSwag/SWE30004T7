@@ -1,14 +1,26 @@
-#include "tests.h"
+#include <iostream>
+#include "functions.cpp"
 
-//main line of tests
-int RunTests()
+using namespace std;
+
+void PrintBits(int toPrint)
 {
-	int result = 0;
+	int i = 1;
+	int length = sizeof(toPrint)*8;//bytes*8 gives number of bits;
 
-	result |= (test1() << 0);
-	result |= (test2() << 1);
+	while(i <= length)
+	{
+		cout << (((toPrint >> (length - i))) & 1);//write out the next largest number
 
-	return result;
+		if(i % 8 == 0)
+		{
+			cout << ' ';
+		}
+
+		i += 1;
+	}
+
+	cout << endl;
 }
 
 int test1()
@@ -31,6 +43,19 @@ int test2()
 	{
 		result = 0;
 	}
+
+	return result;
+}
+
+//main line of tests
+int main()
+{
+	int result = 0;
+
+	result |= (test1() << 0);
+	result |= (test2() << 1);
+
+	PrintBits(result);//output result
 
 	return result;
 }

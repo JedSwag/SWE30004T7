@@ -1,7 +1,6 @@
 #include <iostream>
 #include <bitset>
 #include "functions.cpp"
-#include "tests.cpp"
 
 using namespace std;
 
@@ -29,11 +28,6 @@ int main(int argc, char *argv[])
 {
 	int result = 0;
     cout << "Hello, World!\n";
-
-    if((argc >= 2) && (*argv[1] == 't'))//t for test
-    {
-    	PrintBits(RunTests());
-    }
 
     return result;
 }
