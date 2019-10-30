@@ -27,16 +27,13 @@ void PrintBits(int toPrint)
 
 int main(int argc, char *argv[]) 
 {
+	int result = 0;
     cout << "Hello, World!\n";
 
-    int i = 0;
-    int input = 1;
-
-
-    if((argc >= 2) && (argv[1] == "test"))
+    if((argc >= 2) && (*argv[1] == 't'))//t for test
     {
     	PrintBits(RunTests());
     }
 
-    return 0;
+    return result;
 }
