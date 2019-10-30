@@ -39,7 +39,7 @@ int test2()
 {
 	int result = 1;
 
-	if(IncrementNumber(9) == 101)
+	if(IncrementNumber(9) == 10)
 	{
 		result = 0;
 	}

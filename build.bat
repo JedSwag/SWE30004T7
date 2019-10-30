@@ -6,12 +6,6 @@ g++ tests.cpp -o tests.exe
 ::Tests
 tests.exe
 
-PAUSE
+echo %ERRORLEVEL%
 
-IF NOT "%errorlevel%" == "0"
-{
-::	PAUSE
-::	abort build, the tests failed
-}
-
-PAUSE
+IF NOT %ERRORLEVEL% == 0 abort
