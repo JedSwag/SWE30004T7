@@ -8,4 +8,4 @@ tests.exe
 
 echo %ERRORLEVEL%
 
-IF NOT %ERRORLEVEL% == 0 abort
+IF NOT %ERRORLEVEL% == 0 exit /b %ERRORLEVEL%
